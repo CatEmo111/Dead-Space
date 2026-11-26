@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEADSPACE // emo community</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="stars"></div>
+<header class="topbar">
+  <div class="logo">★ DEADSPACE</div>
+  <nav id="nav" class="hidden">
+    <button data-page="home">HOME</button>
+    <button data-page="members">MEMBERS</button>
+    <button data-page="communities">COMMUNITIES</button>
+    <button data-page="music">MUSIC</button>
+    <button data-page="profile">MY PROFILE</button>
+    <button id="logoutBtn">LOGOUT</button>
+  </nav>
+</header>
+
+<main>
+<section id="authView" class="auth-wrap">
+  <div class="hero">
+    <div class="ascii">╔══════════════════════╗
+║  DEADSPACE 2000     ║
+║  EMO INTERNET       ║
+╚══════════════════════╝</div>
+    <p>your little corner of the dead internet.</p>
+  </div>
+  <div class="auth-grid">
+    <form id="loginForm" class="box">
+      <h2>★ LOGIN</h2>
+      <input name="username" placeholder="username or email" required>
+      <input name="password" type="password" placeholder="password" required>
+      <button>ENTRAR ★</button>
+    </form>
+    <form id="registerForm" class="box">
+      <h2>★ CRIAR CONTA</h2>
+      <input name="username" placeholder="username" required>
+      <input name="password" type="password" placeholder="senha (6+)" required>
+      <input name="email" type="email" placeholder="email" required>
+      <textarea name="bio" placeholder="bio (opcional)"></textarea>
+      <button>CRIAR ★</button>
+    </form>
+  </div>
+  <div id="authMsg" class="msg"></div>
+</section>
+
+<section id="appView" class="hidden">
+  <div id="pageHome" class="page">
+    <div class="grid-main">
+      <aside class="side">
+        <div id="miniProfile" class="box"></div>
+        <div class="box">
+          <h3>★ QUICK SEARCH</h3>
+          <input id="searchInput" placeholder="procurar usuário...">
+          <div id="searchResults"></div>
+        </div>
+        <div class="box">
+          <h3>★ ONLINE</h3>
+          <div id="onlineUsers"></div>
+        </div>
+      </aside>
+      <div>
+        <div class="box post-box">
+          <h2>★ NEW POST</h2>
+          <textarea id="postBody" placeholder="o que está passando na sua cabeça?"></textarea>
+          <div class="post-tools">
+            <label class="file-btn">📎 FOTO/GIF<input id="postImage" type="file" accept="image/png,image/jpeg,image/gif,image/webp"></label>
+            <button id="stickerBtn">☠ FIGURINHAS</button>
+            <button id="sendPost">POSTAR ★</button>
+          </div>
+          <div id="stickerTray" class="sticker-tray hidden">
+            <button class="sticker" data-sticker="🖤">🖤</button>
+            <button class="sticker" data-sticker="☠️">☠️</button>
+            <button class="sticker" data-sticker="★">★</button>
+            <button class="sticker" data-sticker="x_x">x_x</button>
+            <button class="sticker" data-sticker=":(("> :((</button>
+            <button class="sticker" data-sticker="♥">♥</button>
+          </div>
+        </div>
+        <div id="feed"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pageMembers" class="page hidden">
+    <div class="box"><h2>★ MEMBERS</h2><input id="membersSearch" placeholder="buscar..."><div id="membersGrid" class="members-grid"></div></div>
+  </div>
+
+  <div id="pageCommunities" class="page hidden">
+    <div class="box">
+      <h2>★ COMMUNITIES</h2>
+      <button id="newCommunityBtn">+ CRIAR COMUNIDADE</button>
+      <div id="communitiesGrid" class="community-grid"></div>
+    </div>
+  </div>
+
+  <div id="pageCommunity" class="page hidden">
+    <div id="communityPage"></div>
+  </div>
+
+  <div id="pageProfile" class="page hidden">
+    <div id="profilePage"></div>
+  </div>
+
+  <div id="pageMusic" class="page hidden">
+    <div class="box">
+      <h2>★ MUSIC / PUBLIC PLAYLISTS</h2>
+      <p>Adicione links do YouTube/YouTube Music. As músicas públicas aparecem no seu perfil.</p>
+      <form id="songForm" class="inline-form">
+        <input name="title" placeholder="nome da música" required>
+        <input name="url" placeholder="link do YouTube / YouTube Music" required>
+        <label><input name="is_public" type="checkbox" checked> pública</label>
+        <button>ADD SONG ★</button>
+      </form>
+      <div id="mySongs"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
+<div id="toast"></div>
+<footer class="site-credit">criado por xX_Dead_Princess_Xx</footer>
+<script src="/app.js"></script>
+</body>
+</html>
